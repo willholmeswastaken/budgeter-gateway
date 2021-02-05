@@ -1,11 +1,12 @@
 http:
   port: ${PORT:-8080}
+  host: ${HOST:-localhost}
 admin:
   port: 9876
   host: localhost
 apiEndpoints:
   profile:
-    host: localhost
+    host: '*'
     paths: 
       - '/api/budgetProfile'
       - '/api/auth'
