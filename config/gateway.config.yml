@@ -11,7 +11,7 @@ apiEndpoints:
       - '/api/auth'
 serviceEndpoints:
   profilesrv:
-    url: ${PROFILE_SERVICE_URL}
+    url: ${BUDGETER_PROFILE_SERVICE_URL}
 policies:
   - basic-auth
   - cors
@@ -28,7 +28,7 @@ pipelines:
     policies:
       - log:
           - action:
-              message: 'profile ${PROFILE_SERVICE_URL} ${req.path} ${req.method}'
+              message: 'profile ${BUDGETER_PROFILE_SERVICE_URL} ${req.path} ${req.method}'
       - proxy:
           - action:
               serviceEndpoint: profilesrv
